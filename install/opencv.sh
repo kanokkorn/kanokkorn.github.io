@@ -1,4 +1,5 @@
 sudo apt install -y git \
+                  binutils-arm-linux-gnueabihf \
                   python3-dev \
                   python3-pip \
                   build-essential \
@@ -14,6 +15,7 @@ sudo apt install -y git \
                   libxvidcore-dev \
                   libx264-dev \
                   libatlas-base-dev
+sudo pip3 install numpy --user
 cd ~ && git clone https://github.com/opencv/opencv.git && git clone https://github.com/opencv/opencv_contrib.git
 mkdir ~/opencv_build && cd ~/opencv_build
 cmake ../opencv -D CMAKE_BUILD_TYPE=RELEASE \
@@ -28,7 +30,8 @@ cmake ../opencv -D CMAKE_BUILD_TYPE=RELEASE \
       -D SOFTFP=ON \
       -D BUILD_opencv_python2=0 \
       -D BUILD_opencv_python3=1 \
-      -D OPENCV_PYTHON3_VERSION=ON 
+      -D OPENCV_PYTHON3_VERSION=ON \
+      -D PYTHON3_EXECUTABLE:FILEPATH=/usr/bin/python3 \
 make -j4
 sudo make install && sudo python3 ~/opencv_build/python_loader/setup.py install
-pip3 install numpy --user
+sudo pip3 install numpy --user
