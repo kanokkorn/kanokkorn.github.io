@@ -31,6 +31,6 @@ cmake ../opencv -D CMAKE_BUILD_TYPE=RELEASE \
       -D BUILD_opencv_python2=0 \
       -D BUILD_opencv_python3=1 \
       -D OPENCV_PYTHON3_VERSION=ON \
-      -D PYTHON3_EXECUTABLE:FILEPATH=/usr/bin/python3 \
+      -D PYTHON3_EXECUTABLE:FILEPATH=/usr/bin/python3
 make -j4
 sudo make install && sudo python3 ~/opencv_build/python_loader/setup.py develop
