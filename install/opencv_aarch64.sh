@@ -27,6 +27,10 @@ cmake ../opencv -D CMAKE_BUILD_TYPE=RELEASE \
       -D OPENCV_ENABLE_NONFREE=ON \
       -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
       -D BUILD_EXAMPLES=ON \
-      -D OPENCV_PYTHON3_VERSION=ON
+      -D OPENCV_PYTHON3_VERSION=ON \
+      -D WITH_CUDA=ON \
+      -D WITH_OPENGL=ON \
+      -D WITH_FFMPEG=1
+
 make -j4
 sudo make install && sudo python3 ~/opencv_build/python_loader/setup.py develop
