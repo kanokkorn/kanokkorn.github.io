@@ -31,6 +31,5 @@ cmake ../opencv -D CMAKE_BUILD_TYPE=RELEASE \
       -D WITH_CUDA=ON \
       -D WITH_OPENGL=ON \
       -D WITH_FFMPEG=1
-
 make -j4
 sudo make install && sudo python3 ~/opencv_build/python_loader/setup.py develop
