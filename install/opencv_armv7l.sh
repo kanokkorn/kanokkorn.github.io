@@ -1,3 +1,4 @@
+sudo apt update && sudo apt -y upgrade
 sudo apt install -y git \
                   binutils-arm-linux-gnueabihf \
                   python3-dev \
@@ -18,7 +19,7 @@ sudo apt install -y git \
 sudo pip3 install numpy --user
 cd ~ && git clone https://github.com/opencv/opencv.git && git clone https://github.com/opencv/opencv_contrib.git
 mkdir ~/opencv_build && cd ~/opencv_build
-cmake ../opencv -D CMAKE_BUILD_TYPE=RELEASE \
+cmake ~/opencv -D CMAKE_BUILD_TYPE=RELEASE \
       -D CMAKE_INSTALL_PREFIX=/usr/local \
       -D INSTALL_PYTHON_EXAMPLE=ON \
       -D ENABLE_VFPV3=ON \
