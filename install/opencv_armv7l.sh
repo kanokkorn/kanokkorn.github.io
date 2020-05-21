@@ -2,7 +2,7 @@ sudo apt update && sudo apt -y upgrade
 sudo apt install -y git binutils-arm-linux-gnueabihf python3-dev python3-pip build-essential \
       cmake unzip pkg-config libjpeg-dev pkg-config libgtk2.0-dev libpng-dev libjasper-dev \
       libtiff-dev libavcodec-dev libavformat-dev libswscale-dev libxvidcore-dev libx264-dev \
-      libatlas-base-dev
+      libatlas-base-dev ocl-icd-opencl-dev
 sudo pip3 install numpy --user
 cd ~ && git clone https://github.com/opencv/opencv.git && git clone https://github.com/opencv/opencv_contrib.git
 mkdir ~/opencv_build && cd ~/opencv_build
@@ -18,5 +18,6 @@ cmake ~/opencv -D CMAKE_BUILD_TYPE=RELEASE
       -D WITH_LIBV4L=OFF 
       -D WITH_GTK=ON 
       -D WITH_V4L=ON
+      -D WITH_OPENCL=ON
 make -j4
 sudo make install && sudo python3 ~/opencv_build/python_loader/setup.py develop
