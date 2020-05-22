@@ -19,5 +19,5 @@ cmake ~/opencv -D CMAKE_BUILD_TYPE=RELEASE
       -D WITH_GTK=ON 
       -D WITH_V4L=ON
       -D WITH_OPENCL=ON
-make -j4
+make 
 sudo make install && sudo python3 ~/opencv_build/python_loader/setup.py develop
