@@ -3,7 +3,7 @@ sudo apt install -y git binutils-arm-linux-gnueabihf python3-dev python3-pip bui
       cmake unzip pkg-config libjpeg-dev pkg-config libgtk2.0-dev libpng-dev libjasper-dev \
       libtiff-dev libavcodec-dev libavformat-dev libswscale-dev libxvidcore-dev libx264-dev \
       libatlas-base-dev ocl-icd-opencl-dev
-git clone https://github.com/numpy/numpy.git && cd numpy && sudo pip3 install -e . && cd ~
+cd ~ && git clone https://github.com/numpy/numpy.git && sudo pip3 install -e ~/numpy 
 cd ~ && git clone https://github.com/opencv/opencv.git && git clone https://github.com/opencv/opencv_contrib.git
 mkdir ~/opencv_build && cd ~/opencv_build
 cmake ~/opencv -D CMAKE_BUILD_TYPE=RELEASE
